@@ -46,7 +46,7 @@
 ### Usage
 
 [Optional] Setup git hooks
-- chmod +x setup-hooks.sh
+- chmod +x setup-hooks.sh .githooks/prepare-commit-msg
 - ./setup-hooks.sh
 
 [Common] Compile source:
@@ -57,6 +57,7 @@
 
 readRTC:
 - ./update_RTC-port.sh readRTC_by_dev-port.c
+- make
 - sudo .out/
 
 
