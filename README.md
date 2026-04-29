@@ -26,8 +26,9 @@
 
 ## ✨ Features
 
-- ✅ read RTC using system call ioperm / iopl OR through /dev/port
+- ✅ read RTC by /dev/port OR I/O ports OR /dev/rtc0
 - ✅ read random number from /dev/urandom
+- ✅ query MAC address of network interface
 
 ---
 
@@ -59,11 +60,18 @@
 [Common] Run test:
 - ./out
 
-readRTC:
-- ./update_RTC-port.sh readRTC_by_dev-port.c
-- sudo .out/
+RTC:
+- timedatectl -> check time zone of system
+- ./update_RTC-port.sh *.c
+- sudo ./out*
 
+network:
+- ifconfig -> to check network interface (e.g. *ens33*)
+- ./out ens33
 
 ### Reference
 
-- https://vimentor.com/vi/lesson/truy-cap-du-lieu-tren-io-module 
+- https://vimentor.com/vi/lesson/truy-cap-du-lieu-tren-io-module
+- https://www.scs.stanford.edu/23wi-cs212/pintos/specs/mc146818a.pdf
+- https://man7.org/linux/man-pages/man4/rtc.4.html
+- https://man7.org/linux/man-pages/man7/netdevice.7.html
