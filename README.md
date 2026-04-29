@@ -27,6 +27,7 @@
 ## ✨ Features
 
 - ✅ read RTC using system call ioperm / iopl OR through /dev/port
+- ✅ read random number from /dev/urandom
 
 ---
 
@@ -50,14 +51,16 @@
 - ./setup-hooks.sh
 
 [Common] Compile source:
-- gcc *.c -o out
+- make
+
+[Common] Clean source:
+- make clean
 
 [Common] Run test:
 - ./out
 
 readRTC:
 - ./update_RTC-port.sh readRTC_by_dev-port.c
-- make
 - sudo .out/
 
 
